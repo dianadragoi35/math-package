@@ -1,10 +1,10 @@
 {
-    "name": "admin/math-functions",
+    "name": "dianad/math-package",
     "description": "php developer test case",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Functions\\": "src/"
+            "Dianad\\MathPackage\\": "src/"
         }
     },
     "authors": [

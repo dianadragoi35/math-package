@@ -1,7 +1,7 @@
 <?php
-namespace Functions;
+namespace Dianad\MathPackage;
 
-class Functions
+class MathPackage
 {
 
     /**
@@ -51,7 +51,7 @@ class Functions
      */
     public static function isPrimeNumber(int $num): bool
     {
-        if(count(Functions::calcDivisors($num))){
+        if(count(MathPackage::calcDivisors($num))){
             return false;
         }
         return true;	
@@ -67,7 +67,7 @@ class Functions
     {
         $primes = array();
         foreach($nums as $num){
-            if(Functions::isPrimeNumber($num)){
+            if(MathPackage::isPrimeNumber($num)){
                 $primes[] = $num;
             }
         }
