@@ -1,0 +1,17 @@
+{
+    "name": "admin/math-functions",
+    "description": "php developer test case",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Functions\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Diana Dragoi",
+            "email": "dianadragoi35@gmail.com"
+        }
+    ],
+    "require": {}
+}
