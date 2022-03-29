@@ -26,8 +26,9 @@ class MathPackage
         if(!count($divisors)){    
            return;
         }
+        asort($divisors);
 
-       return $divisors;
+        return $divisors;
         
     }
 
