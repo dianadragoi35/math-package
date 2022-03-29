@@ -42,9 +42,9 @@ Takes the prime numbers from an array of integers
 <?php
 
 require_once './vendor/autoload.php';
-use Dianad\MathPackage;
+use Dianad\MathPackage\MathPackage;
 
-$num       = 4;
+$num       = 64;
 $factorial = 12;
 $arrayNums = [2,3,4,5,6,7,11,12,13,17,19,23,29,30,31,37,40,41,43,47,53,59,60,61,67,71,73,74,79,83,89,97,101,102,'asd'];
 
