@@ -1,5 +1,5 @@
 
-# Installation
+# [Installation](https://packagist.org/packages/dianad/math-package)
 
 ```bash
 $ composer require dianad/math-package:dev-master
