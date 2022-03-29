@@ -1,34 +1,40 @@
-# math-package
 
 # Installation
 
 ```bash
-$ composer require dianad/math-package
+$ composer require dianad/math-package:dev-master
 ```
 
 # Usage
 
 `MathPackage` Class
 
-## calcDivisors
+## calcDivisors function
 Takes an integer and returns an array with all of the integer's divisors (except for 1 and the number itself). Prime numbers are not allowed.
+* param `int`
+* returns `array` with divisors
 
-## calcFactorial
+## calcFactorial function
 Calculates and returns the factorial for a given input. Input below 0 and above 12 is not allowed.
+* param `int`
+* returns `int`
 
-## calcPrimeNumbers 
+## calcPrimeNumbers function
 Takes an array with integers finds the prime numbers and returns the result as 
 a XML document which each found prime number in a ‘number’ node
-* @param array $nums
-* @param bool $saveXML, true for saving XML file, false for display XML
-* @return result as XML document
+* param 1 `array` with integers
+* param 2 `bool` $saveXML, true for saving XML file, false for display XML
+* returns result as `XML document`
 
-## isPrimeNumber
+## isPrimeNumber function
 Check if a number is prime
+* param `int`
+* returns `bool`
 
-## filterPrimes
+## filterPrimes function
 Takes the prime numbers from an array of integers
-
+* param `array` on integers
+* returns `array` with primes
 
 # Example
 
