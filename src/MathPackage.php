@@ -10,45 +10,47 @@ class MathPackage
      *
      * @return array
      */
-    public static function calcDivisors(int $num): array
+    public static function calcDivisors(int $num)
     {
         $divisors = array();
-        if(is_numeric($num))
-        {
-             for($i = 2; $i * $i < $num; $i ++) {
-                if ($num % $i == 0) {
-                    $divisors[] = $i;
-                    if($i != $num/$i){
-                        $divisors[] = $num/$i;
-                    }
+        
+        for($i = 2; $i * $i <= $num; $i ++) {
+            if ($num % $i == 0) {
+                $divisors[] = $i;
+                if($i != $num/$i){
+                    $divisors[] = $num/$i;
                 }
             }
         }
-       
-        return $divisors;
+        
+        if(!count($divisors)){    
+           return;
+        }
+
+       return $divisors;
+        
     }
 
     /**
-     * Returns the factorial for a given input between 0 and 12
+     * Returns the factorial for a given number
+     * Input below 0 and above 12 is not allowed
      * @param  int $num
      *
      * @return int
      */
-    public static function calcFactorial(int $num): int
+    public static function calcFactorial(int $num)
     {   
-        if(is_numeric($num))
-        {
-            if($num >= 0 && $num <= 12){
-                $fact = 1;
-                for($i = $num; $i >= 1; $i--) {
-                    $fact *= $i;
-                }
-                return $fact;
-            }else{
-                return 0;
-            }	
-        }
-        return 0;
+        
+        if($num >= 0 && $num <= 12){
+            $fact = 1;
+            for($i = $num; $i >= 1; $i--) {
+                $fact *= $i;
+            }
+            return $fact;
+        }else{
+            return;
+        }	
+        
     }
 
     /**
@@ -59,13 +61,12 @@ class MathPackage
      */
     public static function isPrimeNumber(int $num): bool
     {   
-        if(is_numeric($num)){
-            if(count(MathPackage::calcDivisors($num))){
-                return false;
-            }
-            return true;
+        $divisors = MathPackage::calcDivisors($num);
+    
+        if($divisors){
+            return false;
         }
-        return false;
+        return true;        
         	
     }
 
@@ -85,6 +86,8 @@ class MathPackage
                 }
             }            
         }
+        asort($primes);
+
         return $primes;	
     }
 
@@ -99,7 +102,7 @@ class MathPackage
 
         $nums = MathPackage::filterPrimes($nums);
 
-        $xml = new DOMDocument('1.0',"UTF-8");
+        $xml = new \DOMDocument('1.0',"UTF-8");
         $xml->preserveWhiteSpace = false;
         $xml->formatOutput = true;
 
@@ -112,7 +115,7 @@ class MathPackage
         $result = $xml->createElement('result');
         $primeNumbers->appendChild($result);
 
-        foreach ($nums as $key => $num) {
+        foreach ($nums as $num) {
             if(is_numeric($num)){
                 $number = $xml->createElement('number',"{".$num."}");
                 $result->appendChild($number);
